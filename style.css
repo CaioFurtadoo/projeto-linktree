@@ -26,6 +26,7 @@
 body {
   /*background: color,image,repeat,position,size...*/
   background: var(--bg-url) repeat top center/cover;
+  height: 100vh;
 }
 
 body * {
@@ -87,8 +88,7 @@ body * {
   border-radius: 9999px;
 }
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s;
 }
 
 ul {
@@ -145,4 +145,19 @@ ul li a:hover {
   display: flex;
   justify-content: center;
   padding: 24px;
+}
+
+@media (min-width: 700px) {
+  .light {
+    --bg-url: url(./assets/assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
 }
